@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>助农食育 · AI 智能平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ai-assistant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>助农食育AI平台</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="#farm-help"><i class="fas fa-tractor"></i> 助农专区</a></li>
+                <li><a href="#food-edu"><i class="fas fa-apple-alt"></i> 食育内容</a></li>
+                <li><a href="#ai-assistant" class="active"><i class="fas fa-robot"></i> AI数字小人</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> 关于我们</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">连接农田与餐桌的<span class="highlight">数字化桥梁</span></h1>
+            <p class="hero-subtitle">以助农为核心 · 融合食育 × AI技术 · 推动乡村振兴</p>
+            <div class="hero-buttons">
+                <a href="#ai-assistant" class="btn btn-primary">
+                    <i class="fas fa-comments"></i> 体验AI助手
+                </a>
+                <a href="#farm-help" class="btn btn-secondary">
+                    <i class="fas fa-hands-helping"></i> 参与助农
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 使命宣言 -->
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="section-title">我们的使命</h2>
+            <div class="mission-cards">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>助农帮扶</h3>
+                    <p>展示农产品与农户故事，缩短产销距离，实现农民增收</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>食育科普</h3>
+                    <p>科学饮食推荐，节气食俗与健康知识普及</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI赋能</h3>
+                    <p>智能讲解与交互式饮食指导，提升用户体验</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI数字小人助手专区 -->
+    <section class="ai-assistant-section" id="ai-assistant">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-robot"></i> AI数字小人助手
+                </h2>
+                <p class="section-subtitle">你的专属助农食育智能伙伴</p>
+            </div>
+            
+            <div class="ai-assistant-container">
+                <!-- 左侧：助手介绍 -->
+                <div class="assistant-profile">
+                    <div class="avatar-container">
+                        <div class="avatar">
+                            <span class="avatar-icon">🤖</span>
+                            <div class="avatar-status online"></div>
+                        </div>
+                        <h3 class="assistant-name">小农助手</h3>
+                        <p class="assistant-tagline">助农食育专家 · 24小时在线</p>
+                    </div>
+                    
+                    <div class="assistant-info">
+                        <h4><i class="fas fa-cogs"></i> 我的能力</h4>
+                        <ul class="ability-list">
+                            <li><i class="fas fa-check-circle"></i> 农产品知识解答</li>
+                            <li><i class="fas fa-check-circle"></i> 健康饮食建议</li>
+                            <li><i class="fas fa-check-circle"></i> 食谱推荐</li>
+                            <li><i class="fas fa-check-circle"></i> 食材储存指导</li>
+                            <li><i class="fas fa-check-circle"></i> 助农故事分享</li>
+                            <li><i class="fas fa-check-circle"></i> 节气饮食科普</li>
+                        </ul>
+                        
+                        <h4><i class="fas fa-lightbulb"></i> 试试问我</h4>
+                        <div class="example-questions" id="exampleQuestions">
+                            <!-- 示例问题将由JS动态加载 -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 右侧：聊天界面 -->
+                <div class="chat-container">
+                    <!-- 聊天头部 -->
+                    <div class="chat-header">
+                        <div class="chat-title">
+                            <h3><i class="fas fa-comments"></i> 与"小农助手"对话</h3>
+                            <div class="status-indicator">
+                                <span class="status-dot"></span>
+                                <span class="status-text">在线</span>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="btn-icon" id="clearChat" title="清空对话">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                            <button class="btn-icon" id="toggleHistory" title="对话历史">
+                                <i class="fas fa-history"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 聊天消息区域 -->
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- 欢迎消息 -->
+                        <div class="message message-ai">
+                            <div class="message-avatar">
+                                <span>🤖</span>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-sender">小农助手</div>
+                                <div class="message-text">
+                                    你好！我是<strong>小农助手</strong>，你的助农食育AI伙伴！🌱<br><br>
+                                    我可以帮你：
+                                    • 解答农产品相关问题
+                                    • 提供健康饮食建议
+                                    • 推荐时令食谱
+                                    • 分享农民故事
+                                    • 科普节气饮食知识<br><br>
+                                    今天有什么可以帮你的吗？
+                                </div>
+                                <div class="food-card">
+                                    <div class="food-card-title">🌱 今日食育小建议</div>
+                                    <div class="food-card-content">
+                                    </div>
+                                    <div class="food-card-footer">
+                                        来自小农助手 · 助农食育 AI
+                                    </div>
+                                </div>
+                                <div class="message-time">刚刚</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 输入区域 -->
+                    <div class="chat-input-area">
+                        <div class="input-container">
+                            <div class="input-wrapper">
+                                <input 
+                                    type="text" 
+                                    id="userInput" 
+                                    placeholder="输入关于农产品、饮食健康的问题..." 
+                                    autocomplete="off"
+                                >
+                                <button class="input-action" id="voiceInput" title="语音输入">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                            </div>
+                            <button class="btn-send" id="sendButton">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>发送</span>
+                            </button>
+                        </div>
+                        
+                        <div class="quick-actions">
+                            <button class="quick-action-btn" data-question="推荐几个当季水果">
+                                <i class="fas fa-apple-alt"></i> 当季水果
+                            </button>
+                            <button class="quick-action-btn" data-question="如何保存新鲜蔬菜">
+                                <i class="fas fa-carrot"></i> 蔬菜保存
+                            </button>
+                            <button class="quick-action-btn" data-question="简单的健康食谱">
+                                <i class="fas fa-utensils"></i> 健康食谱
+                            </button>
+                        </div>
+                        
+                        <div class="input-footer">
+                            <span class="hint">
+                                <i class="fas fa-info-circle"></i> 按 Enter 发送，Shift + Enter 换行
+                            </span>
+                            <span class="token-counter" id="tokenCounter">
+                                已用 Token: <span>0</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 其他内容区域（简略） -->
+    <section class="content-section" id="farm-help">
+        <div class="container">
+            <h2 class="section-title">助农专区</h2>
+            <div class="content-grid">
+                <!-- 助农内容 -->
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section" id="food-edu">
+        <div class="container">
+            <h2 class="section-title">食育内容</h2>
+            <div class="content-grid">
+                <!-- 食育内容 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-seedling"></i> 助农食育AI平台</h3>
+                    <p>大学生创新创业项目</p>
+                    <p>连接农田与餐桌的数字化桥梁</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#farm-help">助农专区</a></li>
+                        <li><a href="#food-edu">食育内容</a></li>
+                        <li><a href="#ai-assistant">AI助手</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>项目信息</h4>
+                    <p><i class="fas fa-graduation-cap"></i> 大学生创新创业项目</p>
+                    <p><i class="fas fa-users"></i> 项目团队：XXXX大学XX学院</p>
+                    <p><i class="fas fa-envelope"></i> 联系邮箱：contact@example.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 助农食育AI平台 - 大学生创新创业项目. 保留所有权利.</p>
+                <p class="footer-note">
+                    <i class="fas fa-heart" style="color: #e74c3c;"></i> 
+                    本项目旨在促进农业发展，传播健康饮食文化
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 加载提示 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>正在连接AI助手...</p>
+        </div>
+    </div>
+
+    <!-- 脚本引入 -->
+    <script src="js/utils.js"></script>
+    <script src="js/ai-assistant.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

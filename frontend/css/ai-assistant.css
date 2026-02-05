@@ -1,0 +1,135 @@
+.food-card {
+    margin: 12px auto;
+    padding: 12px 16px;
+    background: #f6fff3;
+    border-left: 4px solid #4caf50;
+    border-radius: 8px;
+    font-size: 14px;
+    max-width: 85%;
+}
+
+.food-card h4 {
+    margin-bottom: 6px;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.food-card small {
+    color: #888;
+}
+
+/* ===== 聊天气泡基础 ===== */
+.message {
+    display: flex;
+    margin-bottom: 16px;
+    max-width: 80%;
+}
+
+.message-user {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.message-ai {
+    margin-right: auto;
+}
+
+.message-avatar {
+    font-size: 28px;
+    margin: 0 8px;
+}
+
+.message-content {
+    background: #f5f5f5;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 16px;
+}
+
+.message-user .message-content {
+    background: #4caf50;
+    color: white;
+}
+
+.message-sender {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+.chat-container {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-user .message-content {
+    background: linear-gradient(135deg, #4CAF50, #43A047);
+    color: #fff;
+    border-radius: 16px 16px 4px 16px;
+    padding: 12px 14px;
+    max-width: 70%;
+}
+
+.message-ai .message-content {
+    background: #f7f8fa;
+    border-radius: 16px 16px 16px 4px;
+    padding: 14px 16px;
+    max-width: 75%;
+    line-height: 1.7;
+}
+
+.message-ai .message-text h3,
+.message-ai .message-text h4 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.message-ai .message-text ul {
+    padding-left: 18px;
+    margin: 8px 0;
+}
+
+.message-ai .message-text li {
+    margin-bottom: 6px;
+}
+
+.food-card {
+    background: linear-gradient(135deg, #f6fff8, #ecfdf3);
+    border-left: 4px solid #4CAF50;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 16px 0;
+}
+
+.food-card-title {
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 6px;
+}
+
+.food-card-content {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.food-card-footer {
+    font-size: 12px;
+    color: #888;
+    margin-top: 8px;
+}
+
+.chat-input-area {
+    border-top: 1px solid #eee;
+    padding: 12px;
+    background: #fafafa;
+}
+
+#userInput {
+    border-radius: 20px;
+    padding: 10px 14px;
+}
