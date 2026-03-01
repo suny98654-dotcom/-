@@ -1,0 +1,6 @@
+/*左右边框*/
+.layout {
+    display: flex;  /* 使用 Flexbox 布局 */
+    min-height: 100vh;  /* 最小高度占满视口 */
+}
+
