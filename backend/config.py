@@ -1,5 +1,10 @@
 # backend/config.py
+import os
 
-DEEPSEEK_API_KEY = "sk-14f156b9d2464d8eab7b74886162b0f7"
+# 从系统环境变量读取
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
+
+if not DEEPSEEK_API_KEY:
+    raise ValueError("未设置 DEEPSEEK_API_KEY 环境变量")
+
 DEEPSEEK_API_URL = "https://api.deepseek.com/chat/completions"
-

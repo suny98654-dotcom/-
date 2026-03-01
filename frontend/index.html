@@ -31,160 +31,29 @@
 
 
 
+<!-- 悬浮AI按钮 -->
+<div id="chat-button">
+    <!-- 如果图标不显示，可以改成 icon-message -->
+    <i class="iconfont icon-message"></i>
+</div>
 
+<!-- 聊天窗口 -->
+<div id="chat-window">
+    <div class="chat-header">
+        AI饮食助手
+        <span id="close-chat">×</span>
+    </div>
 
+    <div id="chat-messages"></div>
 
-
-
-
-   
-  
-
-  
-    <div class="ai-content">
-        <!-- AI数字小人助手专区 -->
-        <section class="ai-assistant-section" id="ai-assistant">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">
-                        <i class="fas fa-robot"></i> AI数字小人助手
-                    </h2>
-                    <p class="section-subtitle">你的专属助农食育智能伙伴</p>
-                </div>
-                
-                <div class="ai-assistant-container">
-                    <!-- 左侧：助手介绍 -->
-                    <div class="assistant-profile">
-                        <div class="avatar-container">
-                            <div class="avatar">
-                                <span class="avatar-icon">🤖</span>
-                                <div class="avatar-status online"></div>
-                            </div>
-                            <h3 class="assistant-name">小农助手</h3>
-                            <p class="assistant-tagline">助农食育专家 · 24小时在线</p>
-                        </div>
-                        
-                        <div class="assistant-info">
-                            <h4><i class="fas fa-cogs"></i> 我的能力</h4>
-                            <ul class="ability-list">
-                                <li><i class="fas fa-check-circle"></i> 农产品知识解答</li>
-                                <li><i class="fas fa-check-circle"></i> 健康饮食建议</li>
-                                <li><i class="fas fa-check-circle"></i> 食谱推荐</li>
-                                <li><i class="fas fa-check-circle"></i> 食材储存指导</li>
-                                <li><i class="fas fa-check-circle"></i> 助农故事分享</li>
-                                <li><i class="fas fa-check-circle"></i> 节气饮食科普</li>
-                            </ul>
-                            
-                            <h4><i class="fas fa-lightbulb"></i> 试试问我</h4>
-                            <div class="example-questions" id="exampleQuestions">
-                                <!-- 示例问题将由JS动态加载 -->
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 右侧：聊天界面 -->
-                    <div class="chat-container">
-                        <!-- 聊天头部 -->
-                        <div class="chat-header">
-                            <div class="chat-title">
-                                <h3><i class="fas fa-comments"></i> 与"小农助手"对话</h3>
-                                <div class="status-indicator">
-                                    <span class="status-dot"></span>
-                                    <span class="status-text">在线</span>
-                                </div>
-                            </div>
-                            <div class="chat-actions">
-                                <button class="btn-icon" id="clearChat" title="清空对话">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                                <button class="btn-icon" id="toggleHistory" title="对话历史">
-                                    <i class="fas fa-history"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- 聊天消息区域 -->
-                        <div class="chat-messages" id="chatMessages">
-                            <!-- 欢迎消息 -->
-                            <div class="message message-ai">
-                                <div class="message-avatar">
-                                    <span>🤖</span>
-                                </div>
-                                <div class="message-content">
-                                    <div class="message-sender">小农助手</div>
-                                    <div class="message-text">
-                                        你好！我是<strong>小农助手</strong>，你的助农食育AI伙伴！🌱<br><br>
-                                        我可以帮你：
-                                        • 解答农产品相关问题
-                                        • 提供健康饮食建议
-                                        • 推荐时令食谱
-                                        • 分享农民故事
-                                        • 科普节气饮食知识<br><br>
-                                        今天有什么可以帮你的吗？
-                                    </div>
-                                    <div class="food-card">
-                                        <div class="food-card-title">🌱 今日食育小建议</div>
-                                        <div class="food-card-content">
-                                        </div>
-                                        <div class="food-card-footer">
-                                            来自小农助手 · 助农食育 AI
-                                        </div>
-                                    </div>
-                                    <div class="message-time">刚刚</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- 输入区域 -->
-                        <div class="chat-input-area">
-                            <div class="input-container">
-                                <div class="input-wrapper">
-                                    <input 
-                                        type="text" 
-                                        id="userInput" 
-                                        placeholder="输入关于农产品、饮食健康的问题..." 
-                                        autocomplete="off"
-                                    >
-                                    <button class="input-action" id="voiceInput" title="语音输入">
-                                        <i class="fas fa-microphone"></i>
-                                    </button>
-                                </div>
-                                <button class="btn-send" id="sendButton">
-                                    <i class="fas fa-paper-plane"></i>
-                                    <span>发送</span>
-                                </button>
-                            </div>
-                            
-                            <div class="quick-actions">
-                                <button class="quick-action-btn" data-question="推荐几个当季水果">
-                                    <i class="fas fa-apple-alt"></i> 当季水果
-                                </button>
-                                <button class="quick-action-btn" data-question="如何保存新鲜蔬菜">
-                                    <i class="fas fa-carrot"></i> 蔬菜保存
-                                </button>
-                                <button class="quick-action-btn" data-question="简单的健康食谱">
-                                    <i class="fas fa-utensils"></i> 健康食谱
-                                </button>
-                            </div>
-                            
-                            <div class="input-footer">
-                                <span class="hint">
-                                    <i class="fas fa-info-circle"></i> 按 Enter 发送，Shift + Enter 换行
-                                </span>
-                                <span class="token-counter" id="tokenCounter">
-                                    已用 Token: <span>0</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="请输入你的问题...">
+        <button id="send-btn">发送</button>
+    </div>
+</div>
 
         <!-- 脚本引入 -->
-        <script src="js/utils.js"></script>
         <script src="js/ai-assistant.js"></script>
-        <script src="js/main.js"></script>
     </div>
 </div>
 
